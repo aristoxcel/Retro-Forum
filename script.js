@@ -31,7 +31,9 @@ const fetchSearchData = (value)=>{
 const getDiscussCard=(posts)=>{
     
     posts.forEach(post=>{
-
+        console.log(post.isActive);
+        let active =post.isActive;
+      
         const discussApiDiv = document.createElement('div');
         discussApiDiv.className =`bg-[#F3F3F5] rounded-3xl`;
         discussApiDiv.innerHTML=`
@@ -41,11 +43,11 @@ const getDiscussCard=(posts)=>{
                 <div class="flex flex-row-reverse">
                     <div>
                         <span class="relative flex h-3 w-3">
-                        <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-green-700 opacity-75"></span>
-                        <span class="relative inline-flex rounded-full h-3 w-3 bg-green-600"></span>
+                        <span class='${active?"animate-ping absolute inline-flex h-full w-full rounded-full bg-green-700  opacity-75 ":"animate-ping absolute inline-flex h-full w-full rounded-full bg-red-700  opacity-75 "}'></span>
+                        <span class='${active?"relative inline-flex rounded-full bg-green-700 h-3 w-3":"relative inline-flex rounded-full bg-red-700 h-3 w-3"}'></span>
                         </span>
                     </div>
-                    <img class=" rounded-2xl" src="${post.image}" />
+                    <img class="rounded-2xl" src="${post.image}" />
                 </div>
             </div>
 
@@ -68,11 +70,15 @@ const getDiscussCard=(posts)=>{
             </div>
         </div>
         `
-        discussHandler.appendChild(discussApiDiv);
-    })
+        
+        discussHandler.appendChild(discussApiDiv);   
+    });
+    
 }
 
+
 // when clients read the forum that is coming from fetchData, if clients click on email button this selectedForum will be created
+let count= 0;
 const selectedForum=(id1, id2)=>{
     const selectedDiv = document.createElement('div');
     selectedDiv.className=`flex justify-between bg-white rounded-2xl p-4 mb-3`;
@@ -84,6 +90,8 @@ const selectedForum=(id1, id2)=>{
     </div>
     `
     titleAdd.appendChild(selectedDiv);
+    count++;
+    document.getElementById('count-show').innerText= count;
 }
 
 fetchData()
