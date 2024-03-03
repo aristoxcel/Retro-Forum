@@ -32,6 +32,15 @@
             </div>
           </div>
 
+          <!-- loading spinner -->
+        <div id="loader" class="hidden flex justify-center items-center h-[90svh]">
+            <span class="loading loading-ring loading-lg w-10 h-10 bg-green-600"></span>
+            <span class="loading loading-ring loading-sm w-16 h-16 bg-red-600"></span>
+            <span class="loading loading-ring loading-sm w-24 h-24 bg-teal-600"></span>
+            <span class="loading loading-ring loading-md w-32 h-32 bg-purple-600"></span>
+        </div>
+
+
           <!-- banner section -->
 
           <div class="hero  bg-[url('/images/bgbanner.png')] bg-no-repeat  bg-[#12132D] rounded-[32px] my-10 py-14">
@@ -44,7 +53,7 @@
                </div>
                 <div class=" flex lg:justify-start justify-center pb-8">
                     <div class="bg-white w-3/4 h-14 flex  justify-between items-center pl-5 pr-2 rounded-[50px] "> 
-                        <input type="text" placeholder="Search here anything"><button class="bg-[#797DFC] h-12 px-7 rounded-full text-white font-mulish font-bold text-xl">Search</button>
+                        <input id="search-input" type="text" placeholder="Search here anything"><button onclick="searchData()" class="bg-[#797DFC] h-12 px-7 rounded-full text-white font-mulish font-bold text-xl">Search</button>
                     </div>
                 </div>
               </div>
@@ -75,16 +84,21 @@
 
     <!-- Discuss section start here -->
     
-    <section class="container mx-auto px-8 pb-6">
+    <section class="container mx-auto px-8 pb-10">
+
         <div class="text-center pb-6">
             <h1 class="font-mulish text-4xl font-extrabold my-8">Let’s Discuss</h1>
             <p class="font-inter text-gray-500 lg:w-1/2 mx-auto text-lg">Yes, you can run unit tests and view the results directly within the app. The integrated testing features allow for a streamlined .</p>
         </div>
 
+        
+
+
+<!-- Api through  -->
         <div>
             <div class="grid lg:grid-cols-12 gap-4">
                 <!-- left API div -->
-                <div id="discuss-handler"  class="lg:col-span-8 space-y-5">
+                <div id="discuss-handler"  class="lg:col-span-8 space-y-5 ">
                     <!-- <div  class="bg-[#F3F3F5] rounded-3xl">
                         <div class="grid grid-cols-6 gap-4 p-7">
                             <div class="col-span-1 bg-teal-700 "><img src="" alt=""></div>
@@ -107,12 +121,13 @@
                             </div>
                         </div>
                     </div>  -->
-
+                   
                 
                 </div>
 
                 <!-- right side  -->
-                <div class="lg:col-span-4  p-5 bg-gray-200  rounded-3xl">
+                <div class="lg:col-span-4 ">
+                   <div class="bg-gray-200   p-5 rounded-3xl">
                     <div class="flex justify-between items-center pb-5">
                         <h1 >Title</h1>
                         <div class="flex gap-2">
@@ -121,16 +136,9 @@
                         </div>
                     </div>
                     <div id="title-add">
-                        <!-- auto add tag -->
-                        <!-- <div class="flex justify-between bg-white rounded-2xl p-4 mb-3">
-                            <h1 class="font-mulish font-semibold text-lg">10 kids unaware of theire ahallowewww werw costume </h1>
-                            <div class="flex  items-center gap-1">
-                                <img src="images/eye.png" alt="">
-                                <h1 class="font-inter text-gray-500">1568</h1>
-                            </div>
-                        </div> -->
-                       
+                     
                     </div>
+                   </div>
                 </div>
             </div>
         </div>
