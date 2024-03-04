@@ -19,6 +19,7 @@ const fetchSearchData = (value)=>{
     setTimeout(async()=>{
         const res = await fetch(`https://openapi.programming-hero.com/api/retro-forum/posts?category=${value}`)
         const data = await res.json();
+       
         const {posts}=data;
         loader.classList.add("hidden");
         getDiscussCard(posts);
@@ -29,7 +30,10 @@ const fetchSearchData = (value)=>{
 
 // fetch data pass through function
 const getDiscussCard=(posts)=>{
-    
+    if (posts.length===0){
+        alert('Your Search item do not found, Please give correct input as- coding, comedy or music');
+        document.getElementById('search-input').value="";
+    }
     posts.forEach(post=>{
         console.log(post.isActive);
         let active =post.isActive;
@@ -100,8 +104,14 @@ fetchData()
 // if clients want to search on search bar to find specific category
 const searchData=()=>{
     let value=document.getElementById('search-input').value;
-    const searchValue = value.trim();
-    fetchSearchData(value);
+    value = value.trim();
+    if (!value){
+        alert("You could not write anything in the Search Box")
+    }
+    else{
+        fetchSearchData(value);
+    }
+    
 }
 
 /* -------------------- */
