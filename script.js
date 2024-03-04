@@ -31,8 +31,9 @@ const fetchSearchData = (value)=>{
 // fetch data pass through function
 const getDiscussCard=(posts)=>{
     if (posts.length===0){
-        alert('Your Search item do not found, Please give correct input as- coding, comedy or music');
+        alert('Your Search item do not found, Please search as- Coding, Comedy or Music or Reload the page');
         document.getElementById('search-input').value="";
+        fetchData();
     }
     posts.forEach(post=>{
         console.log(post.isActive);
@@ -110,6 +111,7 @@ const searchData=()=>{
     }
     else{
         fetchSearchData(value);
+        document.getElementById('search-input').value="";
     }
     
 }
