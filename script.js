@@ -19,7 +19,6 @@ const fetchSearchData = (value)=>{
     setTimeout(async()=>{
         const res = await fetch(`https://openapi.programming-hero.com/api/retro-forum/posts?category=${value}`)
         const data = await res.json();
-       
         const {posts}=data;
         loader.classList.add("hidden");
         getDiscussCard(posts);
@@ -74,8 +73,7 @@ const getDiscussCard=(posts)=>{
                 </div>
             </div>
         </div>
-        `
-        
+        ` 
         discussHandler.appendChild(discussApiDiv);   
     });
     
@@ -113,7 +111,6 @@ const searchData=()=>{
         fetchSearchData(value);
         document.getElementById('search-input').value="";
     }
-    
 }
 
 /* -------------------- */
