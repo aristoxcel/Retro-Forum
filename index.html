@@ -15,45 +15,50 @@
     <section class="container mx-auto p-4 ">
 
         <!-- navbar section start here -->
+
         <div class="navbar bg-base-100">
-            <div class="flex-1">
-              <a class="btn btn-ghost text-xl"><img src="images/logo.png" alt=""></a>
+            <div class="navbar-start">
+              <div class="dropdown">
+                <div tabindex="0" role="button" class="btn btn-ghost lg:hidden">
+                  <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h8m-8 6h16" /></svg>
+                </div>
+                <ul tabindex="0" class="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-24">
+                    <li><a class="bg-gray-200 rounded-full mr-5 h-14 tooltip" data-tip="Home"><img class="mt-2" src="images/Frame.png" alt=""></a></li>
+                    <li><a class="bg-gray-200 rounded-full mr-5 h-14 tooltip" data-tip="Edit"><img class="mt-2"  src="images/tooltip.png" alt=""></a></li>
+                    <li><a class="bg-gray-200 rounded-full mr-5 h-14 tooltip" data-tip="Invite"><img class="mt-2" src="images/invite.png" alt=""></a></li>
+                    <li><a class="bg-gray-200 rounded-full mr-5 h-14 tooltip" data-tip="Flag"><img class="mt-2"   src="images/flag.png" alt=""></a></li>
+                </ul>
+              </div>
+              <a class="btn btn-ghost text-5xl font-mulish font-extrabold">GetTo</a>
             </div>
-            <div class="flex-none">
-              <ul class="menu menu-horizontal px-1">
-                <li><a class="bg-gray-200 rounded-full mx-3  h-14 tooltip" data-tip="Home"><img class="mt-2" src="images/Frame.png" alt=""></a></li>
-                <li><a class="bg-gray-200 rounded-full h-14 tooltip" data-tip="Edit"><img class="mt-2"  src="images/tooltip.png" alt=""></a></li>
-                <li><a class="bg-gray-200 rounded-full mx-3  h-14 tooltip" data-tip="Invite"><img class="mt-2" src="images/invite.png" alt=""></a></li>
-                <li><a class="bg-gray-200 rounded-full mr-4 h-14 tooltip" data-tip="Flag"><img class="mt-2"   src="images/flag.png" alt=""></a></li>
-                <li>
-                  <button class="btn font-mulish h-14 font-bold text-xl bg-[#797DFC] text-white rounded-[50px]  px-10">Sign In</button>
-                </li>
-              </ul>
+            
+            <div class="navbar-end">
+                <div class="navbar-end hidden lg:flex">
+                    <ul class="menu menu-horizontal px-1">
+                      <li><a class="bg-gray-200 rounded-full mx-3  h-14 tooltip" data-tip="Home"><img class="mt-2" src="images/Frame.png" alt=""></a></li>
+                      <li><a class="bg-gray-200 rounded-full h-14 tooltip" data-tip="Edit"><img class="mt-2"  src="images/tooltip.png" alt=""></a></li>
+                      <li><a class="bg-gray-200 rounded-full mx-3  h-14 tooltip" data-tip="Invite"><img class="mt-2" src="images/invite.png" alt=""></a></li>
+                      <li><a class="bg-gray-200 rounded-full mr-4 h-14 tooltip" data-tip="Flag"><img class="mt-2"   src="images/flag.png" alt=""></a></li>
+                    </ul>
+                </div>
+                <button class="btn font-mulish h-14 font-bold text-xl bg-[#797DFC] text-white rounded-[50px]  px-10">Sign In</button>
             </div>
           </div>
-
-          <!-- loading spinner -->
-        <div id="loader" class="hidden flex justify-center items-center h-[90svh]">
-            <span class="loading loading-ring loading-lg w-10 h-10 bg-green-600"></span>
-            <span class="loading loading-ring loading-sm w-16 h-16 bg-red-600"></span>
-            <span class="loading loading-ring loading-sm w-24 h-24 bg-teal-600"></span>
-            <span class="loading loading-ring loading-md w-32 h-32 bg-purple-600"></span>
-        </div>
 
 
           <!-- banner section -->
 
-          <div class="hero  bg-[url('/images/bgbanner.png')] bg-no-repeat  bg-[#12132D] rounded-[32px] my-10 py-14">
+          <div class="hero  bg-[url('/images/bgbanner.png')] bg-no-repeat  bg-[#12132D] rounded-[32px] my-8 py-12">
             <div class="hero-content flex-col lg:flex-row  justify-between w-4/5">
               <div class="text-center lg:text-left space-y-7">
                 <h1 class="text-6xl font-extrabold text-white">Welcome to the</h1>
-                <h1 class="text-6xl font-extrabold "><span class="bg-gradient-to-r from-[#797DFC]  to-violet-700 inline-block text-transparent bg-clip-text">ReTro</span> <span class="text-white">Forum!</span></h1>
+                <h1 class="text-6xl font-extrabold "><span class="bg-gradient-to-r from-[#797DFC]  to-violet-700 inline-block text-transparent bg-clip-text">GetTo</span> <span class="text-white">Forum!</span></h1>
                <div class="flex justify-center lg:justify-start">
                 <p class="py-6 font-mulish text-xl font-medium text-gray-300 w-3/4">Share your favorite opinion and win and wp forum coffee mug!</p>
                </div>
                 <div class=" flex lg:justify-start justify-center pb-8">
                     <div class="bg-white w-3/4 h-14 flex  justify-between items-center pl-5 pr-2 rounded-[50px] "> 
-                        <input id="search-input" type="text" placeholder="Search here anything"><button onclick="searchData()" class="bg-[#797DFC] h-12 px-7 rounded-full text-white font-mulish font-bold text-xl">Search</button>
+                        <input id="search-input" type="text" placeholder="Search here anything" class="block w-full rounded-full border-0 py-1.5 pl-7 pr-20 text-gray-900  placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-gray-100 sm:text-sm sm:leading-6 "><button onclick="searchData()" class="bg-[#797DFC] h-12 px-7 rounded-full text-white font-mulish font-bold text-xl">Search</button>
                     </div>
                 </div>
               </div>
@@ -91,7 +96,13 @@
             <p class="font-inter text-gray-500 lg:w-1/2 mx-auto text-lg">Yes, you can run unit tests and view the results directly within the app. The integrated testing features allow for a streamlined .</p>
         </div>
 
-        
+        <!-- loading spinner -->
+        <div id="loader" class="hidden flex justify-center items-center h-[50svh]">
+            <span class="loading loading-ring loading-lg w-10 h-10 bg-green-600"></span>
+            <span class="loading loading-ring loading-sm w-16 h-16 bg-red-600"></span>
+            <span class="loading loading-ring loading-sm w-24 h-24 bg-teal-600"></span>
+            <span class="loading loading-ring loading-md w-32 h-32 bg-purple-600"></span>
+        </div>
 
 
 <!-- Api through  -->
@@ -147,7 +158,7 @@
 
     <!-- forum section banner start here -->
     <section class="container mx-auto lg:px-8 px-4 my-16">
-        <div class="hero  bg-[#12132D] rounded-3xl lg:p-6 p-3">
+        <div class="hero  bg-[#12132D] rounded-3xl lg:p-6 p-2">
             <div class="hero-content flex-col lg:flex-row-reverse gap-5">
               <img src="images/joinforum.png" class="max-w-sm rounded-lg shadow-2xl" />
               <div class="text-center lg:text-left space-y-5">

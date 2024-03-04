@@ -65,7 +65,7 @@ const getDiscussCard=(posts)=>{
                         <div class="flex  items-center"><img src="images/eye.png" alt=""><h1>${post.view_count}</h1></div>
                         <div class="flex  items-center"><img src="images/watch.png" alt=""><h1>${post.posted_time} min</h1></div>
                     </div>
-                    <div><button onclick='selectedForum("${post.title}","${post.view_count}")'><img src="images/email.png" alt=""></button></div>
+                    <div><button onclick='selectedForum("${post.title.replace(/'/s,'')}","${post.view_count}")'><img src="images/email.png" alt=""></button></div>
                 </div>
             </div>
         </div>
@@ -101,7 +101,6 @@ fetchData()
 const searchData=(value)=>{
     value=document.getElementById('search-input').value;
     fetchSearchData(value);
-    
 }
 
 /* -------------------- */
