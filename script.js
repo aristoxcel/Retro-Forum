@@ -98,8 +98,9 @@ fetchData()
 
 
 // if clients want to search on search bar to find specific category
-const searchData=(value)=>{
-    value=document.getElementById('search-input').value;
+const searchData=()=>{
+    let value=document.getElementById('search-input').value;
+    const searchValue = value.trim();
     fetchSearchData(value);
 }
 
